@@ -46,7 +46,7 @@ public class BuildingComponent extends JComponent {
   private EventListenerList eventListeners = new EventListenerList();
 
   public BuildingComponent() {
-    setPreferredSize(new Dimension(800, 600));
+    setPreferredSize(new Dimension(1000, 1500));
 
     addMouseListener(new MouseAdapter() {
       @Override

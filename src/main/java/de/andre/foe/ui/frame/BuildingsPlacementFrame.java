@@ -10,6 +10,7 @@ import javax.swing.AbstractAction;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
 import de.andre.foe.ui.component.BuildingComponent;
+import de.andre.foe.ui.component.StatusBar;
 import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.Datacenter;
 
@@ -23,7 +24,7 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
   private BuildingComponent buildingComponent;
   private final Map<Building, BuildingComponent.Building> buildingMap = new HashMap<>();
 
-  public BuildingsPlacementFrame(Datacenter datacenter) {
+  public BuildingsPlacementFrame(Datacenter datacenter, StatusBar statusBar) {
     super();
     setClosable(false);
     setTitle("Gamefield");
@@ -67,6 +68,17 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
       } else {
         b.setX(newPl.x);
         b.setY(newPl.y);
+      }
+    });
+    
+    buildingComponent.addObjectSelectedListener(obj -> {
+      if (obj.isSelected()) {
+        Building b = findKeyByValue(buildingMap, obj);
+        if (b == null) {
+          System.err.println("BuildingsPlacementFrame: Object not found.");
+        } else {
+          statusBar.postStatus("Selected: " + b.getType().getName());
+        }
       }
     });
 

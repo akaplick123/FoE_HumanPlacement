@@ -30,7 +30,7 @@ public class MainFrame extends JFrame {
   private static final long serialVersionUID = 1L;
   private JDesktopPane desktop;
   private StatusBar statusBar;
-  
+
   @Autowired
   private Datacenter datacenter;
 
@@ -66,7 +66,7 @@ public class MainFrame extends JFrame {
   }
 
   private void addBasicFrames() {
-    new CreateInternalFrameAction(desktop, () -> new BuildingsPlacementFrame(datacenter))
+    new CreateInternalFrameAction(desktop, () -> new BuildingsPlacementFrame(datacenter, statusBar))
         .actionPerformed(null);
   }
 
