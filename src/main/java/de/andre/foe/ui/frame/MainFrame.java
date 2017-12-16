@@ -130,6 +130,12 @@ public class MainFrame extends JFrame {
         new CreateInternalFrameAction(desktop, () -> new BuildingTypesFrame(desktop, datacenter)));
     menu.add(menuItem);
 
+    menuItem = new JMenuItem("Show stats ...");
+    menuItem.setMnemonic(KeyEvent.VK_S);
+    menuItem.addActionListener(
+        new CreateInternalFrameAction(desktop, () -> new BuildingsStatsFrame(datacenter)));
+    menu.add(menuItem);
+
     menuBar.add(menu);
   }
 

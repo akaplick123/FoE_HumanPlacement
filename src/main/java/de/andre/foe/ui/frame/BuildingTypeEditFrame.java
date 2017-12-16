@@ -42,12 +42,29 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
     JPanel pFields = new JPanel(new SpringLayout());
     JLabel lName = new JLabel("Name:");
     JTextField tfName = new JTextField(15);
+    tfName.setHorizontalAlignment(JTextField.TRAILING);
 
     JLabel lWidth = new JLabel("Width:");
     JSpinner tfWidth = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
 
     JLabel lHeight = new JLabel("Height:");
     JSpinner tfHeight = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
+
+    JLabel lPeople = new JLabel("People:");
+    JTextField tfPeople = new JTextField(15);
+    tfPeople.setHorizontalAlignment(JTextField.TRAILING);
+
+    JLabel lMoney = new JLabel("Money per Day:");
+    JTextField tfMoney = new JTextField(15);
+    tfMoney.setHorizontalAlignment(JTextField.TRAILING);
+
+    JLabel lCulture = new JLabel("Culture per Day:");
+    JTextField tfCulture = new JTextField(15);
+    tfCulture.setHorizontalAlignment(JTextField.TRAILING);
+
+    JLabel lResources = new JLabel("Resources per Day:");
+    JTextField tfResources = new JTextField(15);
+    tfResources.setHorizontalAlignment(JTextField.TRAILING);
 
     JLabel lColor = new JLabel("Color:");
     JButton tfColor = new JButton("change");
@@ -67,12 +84,20 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
     pFields.add(tfWidth);
     pFields.add(lHeight);
     pFields.add(tfHeight);
+    pFields.add(lPeople);
+    pFields.add(tfPeople);
+    pFields.add(lMoney);
+    pFields.add(tfMoney);
+    pFields.add(lCulture);
+    pFields.add(tfCulture);
+    pFields.add(lResources);
+    pFields.add(tfResources);
     pFields.add(lColor);
     pFields.add(tfColor);
 
     // Lay out the panel.
     SpringUtilities.makeCompactGrid(pFields, // parent
-        4, 2, // rows, columns
+        8, 2, // rows, columns
         3, 3, // initX, initY
         3, 3); // xPad, yPad
 
@@ -102,6 +127,10 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
       tfWidth.setValue(buildingType.getWidth());
       tfHeight.setValue(buildingType.getHeight());
       tfColor.setBackground(buildingType.getFillColor());
+      tfPeople.setText(intToText(buildingType.getPeople()));
+      tfMoney.setText(intToText(buildingType.getMoney()));
+      tfCulture.setText(intToText(buildingType.getCulture()));
+      tfResources.setText(intToText(buildingType.getResources()));
     }
 
     bOk.addActionListener(e -> {
@@ -112,7 +141,11 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
       buildingType.setName(tfName.getText().trim());
       buildingType.setWidth((Integer) tfWidth.getValue());
       buildingType.setHeight((Integer) tfHeight.getValue());
-      buildingType.setFillColor(tfColor.getBackground()); 
+      buildingType.setFillColor(tfColor.getBackground());
+      buildingType.setPeople(textToInt(tfPeople.getText()));
+      buildingType.setMoney(textToInt(tfMoney.getText()));
+      buildingType.setCulture(textToInt(tfCulture.getText()));
+      buildingType.setResources(textToInt(tfResources.getText()));
       if (editMode == EditType.ADD) {
         datacenter.add(buildingType);
       }
@@ -123,6 +156,37 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
         log.warn("Cannot close frame.", e1);
       }
     });
+  }
+
+  private static String intToText(int value) {
+    if (value % 100_000 == 0 && value >= 1_000_000) {
+      // e.g. 1500000 -> 1.5M
+      return Integer.toString(value / 1_000_000) + "M";
+    }
+    if (value % 100 == 0 && value >= 1_000) {
+      // e.g. 1500 -> 1.5K
+      return Integer.toString(value / 1_000) + "K";
+    }
+
+    return Integer.toString(value);
+  }
+
+  private static int textToInt(String text) {
+    String txt = text.replace(" ", "");
+    int factor = 1;
+    if (txt.endsWith("K") || txt.endsWith("k")) {
+      factor = 1_000;
+    }
+    if (txt.endsWith("M") || txt.endsWith("m")) {
+      factor = 1_000_000;
+    }
+
+    txt = txt.replaceAll("[^0-9-.]+", "");
+    try {
+      return Integer.parseInt(txt) * factor;
+    } catch (Exception ex) {
+      return 0;
+    }
   }
 
   public enum EditType {

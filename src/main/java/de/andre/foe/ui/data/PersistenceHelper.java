@@ -92,6 +92,10 @@ public class PersistenceHelper {
   private BuildingType convertTotModel(PBuildingType pBuildingType) {
     BuildingType buildingType = new BuildingType();
     buildingType.setName(pBuildingType.name);
+    buildingType.setMoney(pBuildingType.money);
+    buildingType.setCulture(pBuildingType.culture);
+    buildingType.setResources(pBuildingType.resources);
+    buildingType.setPeople(pBuildingType.people);
     buildingType.setWidth(pBuildingType.width);
     buildingType.setHeight(pBuildingType.height);
     buildingType.setLayer(pBuildingType.layer);
@@ -144,6 +148,10 @@ public class PersistenceHelper {
     PBuildingType pBuildingType = new PBuildingType();
     pBuildingType.id = id;
     pBuildingType.name = buildingType.getName();
+    pBuildingType.money = buildingType.getMoney();
+    pBuildingType.culture = buildingType.getCulture();
+    pBuildingType.resources = buildingType.getResources();
+    pBuildingType.people = buildingType.getPeople();
     pBuildingType.width = buildingType.getWidth();
     pBuildingType.height = buildingType.getHeight();
     pBuildingType.layer = buildingType.getLayer();
@@ -178,6 +186,10 @@ public class PersistenceHelper {
   private static class PBuildingType {
     int id;
     String name;
+    int money = 0;
+    int culture = 0;
+    int resources = 0;
+    int people = 0;
     int width;
     int height;
     int layer = 1;

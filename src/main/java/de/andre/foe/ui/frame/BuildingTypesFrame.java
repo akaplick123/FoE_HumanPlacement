@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.SpringLayout;
 import de.andre.foe.ui.action.CreateInternalFrameAction;
 import de.andre.foe.ui.component.SpringUtilities;
@@ -33,7 +34,8 @@ public class BuildingTypesFrame extends JInternalFrameBase {
 
     setLayout(new BorderLayout());
     pBuildingtypes = new JPanel(new SpringLayout());
-    add(pBuildingtypes, BorderLayout.CENTER);
+    JScrollPane sc = new JScrollPane(pBuildingtypes);
+    add(sc, BorderLayout.CENTER);
 
     // initialize this component with all existing types
     for (BuildingType buildingType : datacenter.getBuildingTypes()) {
