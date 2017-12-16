@@ -2,8 +2,10 @@ package de.andre.foe.ui.frame;
 
 import java.awt.BorderLayout;
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JPanel;
 import javax.swing.SpringLayout;
+import de.andre.foe.ui.action.CreateInternalFrameAction;
 import de.andre.foe.ui.component.SpringUtilities;
 import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.BuildingType;
@@ -16,24 +18,29 @@ public class BuildingTypesFrame extends JInternalFrameBase {
    * 
    */
   private static final long serialVersionUID = 1L;
-  
-  private Datacenter datacenter;
+
+  private final JDesktopPane desktop;
+  private final Datacenter datacenter;
   private JPanel pBuildingtypes;
   private int numberOfBuildingTypes = 0;
 
-  public BuildingTypesFrame(Datacenter datacenter) {
+
+  public BuildingTypesFrame(JDesktopPane desktop, Datacenter datacenter) {
     super();
     setTitle("building types");
     this.datacenter = datacenter;
-    
+    this.desktop = desktop;
+
     setLayout(new BorderLayout());
     pBuildingtypes = new JPanel(new SpringLayout());
     add(pBuildingtypes, BorderLayout.CENTER);
 
+    // initialize this component with all existing types
     for (BuildingType buildingType : datacenter.getBuildingTypes()) {
       addBuildingTypeComponent(buildingType);
     }
 
+    // add types dynamically
     BuildingtypeAddedListener newBuildingTypeListener = new BuildingtypeAddedListener() {
       @Override
       public void buildingtypeAdded(BuildingType buildingType) {
@@ -52,19 +59,28 @@ public class BuildingTypesFrame extends JInternalFrameBase {
   protected void addBuildingTypeComponent(final BuildingType buildingType) {
     JButton bAdd = new JButton(buildingType.getName());
     pBuildingtypes.add(bAdd);
+    JButton bEdit = new JButton("edit");
+    pBuildingtypes.add(bEdit);
     numberOfBuildingTypes++;
-    
+
     // Lay out the panel.
     SpringUtilities.makeCompactGrid(pBuildingtypes, // parent
-        numberOfBuildingTypes, 1, // rows, columns
+        numberOfBuildingTypes, 2, // rows, columns
         3, 3, // initX, initY
         3, 3); // xPad, yPad
-    
+
     bAdd.addActionListener(e -> {
       // create an building
       Building building = new Building();
       building.setType(buildingType);
       datacenter.add(building);
+    });
+
+    bEdit.addActionListener(e -> {
+      new CreateInternalFrameAction(desktop, () -> {
+        return new BuildingTypeEditFrame(datacenter, BuildingTypeEditFrame.EditType.EDIT,
+            buildingType);
+      }).actionPerformed(null);
     });
   }
 

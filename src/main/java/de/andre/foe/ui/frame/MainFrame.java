@@ -127,7 +127,7 @@ public class MainFrame extends JFrame {
     menuItem = new JMenuItem("Show building type ...");
     menuItem.setMnemonic(KeyEvent.VK_B);
     menuItem.addActionListener(
-        new CreateInternalFrameAction(desktop, () -> new BuildingTypesFrame(datacenter)));
+        new CreateInternalFrameAction(desktop, () -> new BuildingTypesFrame(desktop, datacenter)));
     menu.add(menuItem);
 
     menuBar.add(menu);
