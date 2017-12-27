@@ -15,6 +15,7 @@ public abstract class JInternalFrameBase extends JInternalFrame {
   }
 
   private static final int xOffset = 30, yOffset = 30;
+  private static final int xMax = 20, yMax = 10;
   private static int openFrameCount = 0;
 
   public JInternalFrameBase() {
@@ -28,7 +29,7 @@ public abstract class JInternalFrameBase extends JInternalFrame {
     setSize(500, 300);
 
     // Set the window's location.
-    setLocation(xOffset * openFrameCount, yOffset * openFrameCount);
+    setLocation(xOffset * (openFrameCount % xMax), yOffset * (openFrameCount % yMax));
   }
 
   public void center(JInternalFrame parent) {

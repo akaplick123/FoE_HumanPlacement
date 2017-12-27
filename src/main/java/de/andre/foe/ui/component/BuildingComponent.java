@@ -180,10 +180,14 @@ public class BuildingComponent extends JComponent {
    */
   private Building objectAt(Point p) {
     for (List<Building> layer : this.objects.descendingMap().values()) {
+      Building result = null;
       for (Building object : layer) {
         if (object.isLocatedAt(p.x, p.y)) {
-          return object;
+          result = object;
         }
+      }
+      if (result != null) {
+        return result;
       }
     }
 
