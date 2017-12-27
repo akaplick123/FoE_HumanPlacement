@@ -23,6 +23,7 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
   private JTextField tfPeople;
   private JTextField tfMoney;
   private JTextField tfCulture;
+  private JTextField tfResources;
 
   public BuildingsStatsFrame(Datacenter datacenter) {
     super();
@@ -39,9 +40,10 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
     tfPeople = createNumberTextfield();
     JLabel lCulture = new JLabel("Culture:");
     tfCulture = createNumberTextfield();
-
     JLabel lMoney = new JLabel("Money income per Day:");
     tfMoney = createNumberTextfield();
+    JLabel lResources = new JLabel("Resources per Day:");
+    tfResources = createNumberTextfield();
 
     pFields.add(lPeople);
     pFields.add(tfPeople);
@@ -49,12 +51,14 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
     pFields.add(tfCulture);
     pFields.add(lMoney);
     pFields.add(tfMoney);
+    pFields.add(lResources);
+    pFields.add(tfResources);
 
     updateStats();
 
     // Lay out the panel.
     SpringUtilities.makeCompactGrid(pFields, // parent
-        3, 2, // rows, columns
+        4, 2, // rows, columns
         3, 3, // initX, initY
         3, 3); // xPad, yPad
 
@@ -75,6 +79,7 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
     int sumPeople = 0;
     int sumCulture = 0;
     int sumMoney = 0;
+    int sumResources = 0;
     for (Building b : datacenter.getBuildings()) {
       BuildingType bt = b.getType();
       if (bt.getMoney() > 0) {
@@ -86,12 +91,16 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
       if (bt.getCulture() > 0) {
         sumCulture += bt.getCulture();
       }
+      if (bt.getResources() > 0) {
+        sumResources += bt.getResources();
+      }
     }
 
     // update UI
     tfPeople.setText(intToText(sumPeople));
     tfCulture.setText(intToText(sumCulture));
     tfMoney.setText(intToText(sumMoney));
+    tfResources.setText(intToText(sumResources));    
   }
 
   private JTextField createNumberTextfield() {

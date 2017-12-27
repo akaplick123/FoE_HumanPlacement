@@ -4,15 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.beans.PropertyVetoException;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SpringLayout;
 import de.andre.foe.ui.component.SpringUtilities;
+import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.BuildingType;
 import de.andre.foe.ui.data.Datacenter;
 import lombok.extern.log4j.Log4j;
@@ -105,6 +108,7 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
 
     JPanel pButtons = new JPanel(new FlowLayout(FlowLayout.CENTER));
     JButton bOk = new JButton("apply");
+    JButton bDelete = new JButton("delete");;
     switch (editMode) {
       case EDIT:
         setTitle("Edit building type");
@@ -113,10 +117,12 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
       case ADD:
         setTitle("Create building type");
         bOk.setText("add");
+        bDelete.setVisible(false);
         break;
     }
     JButton bCancel = new JButton("cancel");
     pButtons.add(bCancel);
+    pButtons.add(bDelete);
     pButtons.add(bOk);
 
     add(pButtons, BorderLayout.SOUTH);
@@ -154,6 +160,29 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
         BuildingTypeEditFrame.this.setClosed(true);
       } catch (PropertyVetoException e1) {
         log.warn("Cannot close frame.", e1);
+      }
+    });
+
+    bDelete.addActionListener(e -> {
+      int result =
+          JOptionPane.showConfirmDialog(this, "Do you really want to delete that building type?",
+              "Delete building type", JOptionPane.YES_NO_OPTION);
+      if (result == JOptionPane.YES_OPTION) {
+        // delete building type and all buildings of that type
+        ArrayList<Building> toBeDeleted = new ArrayList<>();
+        for (Building building : datacenter.getBuildings()) {
+          if (building.getType().equals(buildingType)) {
+            toBeDeleted.add(building);
+          }
+        }
+        toBeDeleted.stream().forEach(datacenter::remove);
+        datacenter.remove(buildingType);
+
+        try {
+          BuildingTypeEditFrame.this.setClosed(true);
+        } catch (PropertyVetoException e1) {
+          log.warn("Cannot close frame.", e1);
+        }
       }
     });
   }
