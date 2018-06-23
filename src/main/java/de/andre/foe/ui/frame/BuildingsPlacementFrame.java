@@ -22,6 +22,7 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
   private static final long serialVersionUID = 1L;
 
   private BuildingComponent buildingComponent;
+  /** map to associate the model of buildings with there representation on the screen */
   private final Map<Building, BuildingComponent.Building> buildingMap = new HashMap<>();
 
   public BuildingsPlacementFrame(Datacenter datacenter, StatusBar statusBar) {
@@ -51,9 +52,9 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
       buildingMap.put(b, obj);
     });
 
-    datacenter.addBuildingRemoveListener(b -> {
-      BuildingComponent.Building obj = buildingMap.get(b);
-      if (b == null) {
+    datacenter.addBuildingRemoveListener(building -> {
+      BuildingComponent.Building obj = buildingMap.get(building);
+      if (obj == null) {
         System.err.println("BuildingsPlacementFrame: Object not found.");
       } else {
         buildingComponent.removeBuilding(obj);
@@ -105,6 +106,13 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
     });
   }
 
+  /**
+   * searches thru the given map and try to find an entry where the value equals given value.
+   * 
+   * @param map the map to search thru
+   * @param value the searched value
+   * @return the key of the found entry or <code>null</code> if no entry has the given value
+   */
   private static <K, V> K findKeyByValue(Map<K, V> map, V value) {
     for (Entry<K, V> entry : map.entrySet()) {
       if (entry.getValue().equals(value)) {

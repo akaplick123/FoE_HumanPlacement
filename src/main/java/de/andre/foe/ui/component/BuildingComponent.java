@@ -46,12 +46,12 @@ public class BuildingComponent extends JComponent {
   private EventListenerList eventListeners = new EventListenerList();
 
   public BuildingComponent() {
-    setPreferredSize(new Dimension(1000, 1500));
+    setPreferredSize(new Dimension(1500, 1500));
 
     addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
-        // deselct all objects
+        // deselect all objects
         for (List<Building> layer : objects.values()) {
           for (Building object : layer) {
             if (object.isSelected()) {
@@ -239,9 +239,11 @@ public class BuildingComponent extends JComponent {
 
   @Override
   protected void paintComponent(Graphics g) {
+    // paint component itself
     super.paintComponent(g);
     Graphics2D g2 = (Graphics2D) g;
 
+    // (re)paint all buildings
     for (List<Building> layer : this.objects.values()) {
       for (Building object : layer) {
         object.paintSquare(g2);
@@ -307,6 +309,11 @@ public class BuildingComponent extends JComponent {
     }
   }
 
+  /**
+   * Graphical representation of a building
+   * 
+   * @author Andre
+   */
   @Getter
   @Setter
   public static class Building {

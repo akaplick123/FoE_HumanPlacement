@@ -3,6 +3,11 @@ package de.andre.foe.ui.data;
 import java.awt.Color;
 import lombok.Data;
 
+/**
+ * Model of a building type
+ * 
+ * @author Andre
+ */
 @Data
 public class BuildingType {
   private String name;

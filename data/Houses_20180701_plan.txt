@@ -60,13 +60,30 @@
     },
     {
       "id": 4,
-      "name": "Hochhaus",
-      "money": 4830,
-      "culture": -1087,
+      "name": "Autofabrik",
+      "money": 0,
+      "culture": 0,
+      "resources": 1,
+      "people": 0,
+      "width": 5,
+      "height": 6,
+      "layer": 1,
+      "fillColor": {
+        "r": 51,
+        "g": 153,
+        "b": 255,
+        "a": 255
+      }
+    },
+    {
+      "id": 5,
+      "name": "Plattenbau",
+      "money": 14940,
+      "culture": 0,
       "resources": 0,
-      "people": 1087,
-      "width": 3,
-      "height": 3,
+      "people": 2120,
+      "width": 4,
+      "height": 4,
       "layer": 1,
       "fillColor": {
         "r": 51,
@@ -76,75 +93,7 @@
       }
     },
     {
-      "id": 5,
-      "name": "Fertighaus",
-      "money": 0,
-      "culture": -1380,
-      "resources": 0,
-      "people": 1380,
-      "width": 4,
-      "height": 3,
-      "layer": 1,
-      "fillColor": {
-        "r": 0,
-        "g": 204,
-        "b": 0,
-        "a": 255
-      }
-    },
-    {
       "id": 6,
-      "name": "Autowerkstatt",
-      "money": 0,
-      "culture": 0,
-      "resources": 9650,
-      "people": 0,
-      "width": 4,
-      "height": 4,
-      "layer": 1,
-      "fillColor": {
-        "r": 0,
-        "g": 153,
-        "b": 255,
-        "a": 255
-      }
-    },
-    {
-      "id": 7,
-      "name": "Elektrogeräte",
-      "money": 0,
-      "culture": 0,
-      "resources": 14190,
-      "people": 0,
-      "width": 4,
-      "height": 5,
-      "layer": 1,
-      "fillColor": {
-        "r": 0,
-        "g": 51,
-        "b": 255,
-        "a": 255
-      }
-    },
-    {
-      "id": 8,
-      "name": "Elektrizitätswerk",
-      "money": 0,
-      "culture": 2620,
-      "resources": 0,
-      "people": 0,
-      "width": 5,
-      "height": 5,
-      "layer": 1,
-      "fillColor": {
-        "r": 153,
-        "g": 0,
-        "b": 255,
-        "a": 255
-      }
-    },
-    {
-      "id": 9,
       "name": "Autokino",
       "money": 0,
       "culture": 2800,
@@ -154,97 +103,150 @@
       "height": 4,
       "layer": 1,
       "fillColor": {
-        "r": 255,
+        "r": 204,
         "g": 0,
         "b": 204,
+        "a": 255
+      }
+    },
+    {
+      "id": 7,
+      "name": "Zoo",
+      "money": 0,
+      "culture": 3510,
+      "resources": 0,
+      "people": 0,
+      "width": 5,
+      "height": 6,
+      "layer": 1,
+      "fillColor": {
+        "r": 153,
+        "g": 0,
+        "b": 204,
+        "a": 255
+      }
+    },
+    {
+      "id": 8,
+      "name": "Turm zu Babel (W)",
+      "money": 0,
+      "culture": 0,
+      "resources": 0,
+      "people": 1140,
+      "width": 4,
+      "height": 4,
+      "layer": 1,
+      "fillColor": {
+        "r": 255,
+        "g": 255,
+        "b": 153,
+        "a": 255
+      }
+    },
+    {
+      "id": 9,
+      "name": "Leuchtturm von Alexandria (W)",
+      "money": 0,
+      "culture": 0,
+      "resources": 0,
+      "people": 0,
+      "width": 4,
+      "height": 4,
+      "layer": 1,
+      "fillColor": {
+        "r": 255,
+        "g": 255,
+        "b": 153,
+        "a": 255
+      }
+    },
+    {
+      "id": 10,
+      "name": "Atomium (W)",
+      "money": 0,
+      "culture": 2400,
+      "resources": 0,
+      "people": 0,
+      "width": 7,
+      "height": 6,
+      "layer": 1,
+      "fillColor": {
+        "r": 255,
+        "g": 255,
+        "b": 153,
         "a": 255
       }
     }
   ],
   "buildings": [
     {
-      "x": 28,
+      "x": 40,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 32,
+      "x": 44,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 24,
+      "x": 36,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 29,
+      "x": 41,
       "y": 1,
       "buildingTypeId": 2
     },
     {
+      "x": 44,
+      "y": 5,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 5,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 5,
+      "buildingTypeId": 1
+    },
+    {
       "x": 32,
       "y": 5,
       "buildingTypeId": 1
     },
     {
-      "x": 28,
-      "y": 5,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 5,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 5,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 34,
+      "x": 46,
       "y": 11,
       "buildingTypeId": 3
     },
     {
-      "x": 20,
+      "x": 32,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 16,
+      "x": 28,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 16,
+      "x": 28,
       "y": 5,
       "buildingTypeId": 1
     },
     {
-      "x": 12,
+      "x": 24,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 12,
+      "x": 24,
       "y": 5,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 9,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 9,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 9,
       "buildingTypeId": 1
     },
     {
@@ -263,18 +265,18 @@
       "buildingTypeId": 1
     },
     {
-      "x": 12,
-      "y": 13,
+      "x": 36,
+      "y": 9,
       "buildingTypeId": 1
     },
     {
-      "x": 16,
-      "y": 13,
+      "x": 40,
+      "y": 9,
       "buildingTypeId": 1
     },
     {
-      "x": 20,
-      "y": 13,
+      "x": 44,
+      "y": 9,
       "buildingTypeId": 1
     },
     {
@@ -283,584 +285,624 @@
       "buildingTypeId": 1
     },
     {
-      "x": 34,
+      "x": 28,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 46,
       "y": 7,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 9,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
-      "y": 7,
+      "x": 35,
+      "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 11,
       "buildingTypeId": 3
     },
     {
-      "x": 25,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 27,
-      "y": 1,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 27,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 27,
-      "y": 3,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 23,
-      "y": 9,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 27,
+      "x": 37,
       "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 28,
-      "y": 13,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 13,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 28,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 17,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 28,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 36,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 28,
-      "y": 25,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 36,
-      "y": 21,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 36,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 28,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 29,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 20,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 12,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 24,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 16,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 28,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 32,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 36,
-      "y": 33,
-      "buildingTypeId": 1
-    },
-    {
-      "x": 29,
-      "y": 7,
-      "buildingTypeId": 8
-    },
-    {
-      "x": 29,
-      "y": 12,
-      "buildingTypeId": 8
-    },
-    {
-      "x": 29,
-      "y": 22,
-      "buildingTypeId": 8
-    },
-    {
-      "x": 29,
-      "y": 17,
-      "buildingTypeId": 8
-    },
-    {
-      "x": 29,
-      "y": 27,
-      "buildingTypeId": 8
-    },
-    {
-      "x": 24,
-      "y": 1,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 21,
-      "y": 1,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 17,
+      "x": 33,
       "y": 9,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 20,
-      "y": 12,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 21,
-      "y": 4,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 16,
-      "y": 1,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 16,
-      "y": 4,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 17,
-      "y": 12,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 24,
-      "y": 4,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 20,
-      "y": 9,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 19,
-      "y": 1,
       "buildingTypeId": 3
     },
     {
-      "x": 19,
-      "y": 3,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 19,
+      "x": 39,
       "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 21,
-      "y": 7,
+      "x": 40,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 24,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 28,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 28,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 24,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 48,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 28,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 24,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 48,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 48,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 28,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 24,
+      "y": 29,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 32,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 24,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 36,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 28,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 40,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 48,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 44,
+      "y": 33,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 33,
+      "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 19,
-      "y": 7,
+      "x": 31,
+      "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 15,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 17,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
-      "y": 13,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 17,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 9,
-      "y": 9,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 12,
-      "y": 9,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 23,
+      "x": 46,
       "y": 13,
       "buildingTypeId": 3
     },
     {
       "x": 29,
-      "y": 32,
-      "buildingTypeId": 8
+      "y": 5,
+      "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 33,
+      "y": 13,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 46,
       "y": 19,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 31,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 17,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 25,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 21,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 29,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 27,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 15,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 23,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 19,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
+      "x": 33,
       "y": 21,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 33,
       "buildingTypeId": 3
     },
     {
-      "x": 34,
+      "x": 46,
       "y": 35,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
-      "y": 25,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 23,
-      "y": 23,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 15,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 23,
+      "x": 33,
       "y": 27,
       "buildingTypeId": 3
     },
     {
-      "x": 23,
-      "y": 29,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 15,
-      "y": 11,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 15,
-      "y": 9,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 25,
-      "y": 25,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 25,
-      "y": 13,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 25,
-      "y": 9,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 25,
-      "y": 29,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 25,
-      "y": 21,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 25,
-      "y": 17,
-      "buildingTypeId": 6
-    },
-    {
-      "x": 15,
-      "y": 13,
+      "x": 33,
+      "y": 23,
       "buildingTypeId": 3
     },
     {
       "x": 23,
+      "y": 5,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 33,
+      "y": 29,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 33,
       "y": 31,
       "buildingTypeId": 3
     },
     {
-      "x": 9,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 11,
+      "x": 17,
       "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 13,
-      "y": 4,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 13,
-      "y": 1,
-      "buildingTypeId": 4
-    },
-    {
-      "x": 11,
-      "y": 3,
+      "x": 33,
+      "y": 7,
       "buildingTypeId": 3
     },
     {
-      "x": 11,
-      "y": 1,
+      "x": 33,
+      "y": 33,
       "buildingTypeId": 3
     },
     {
-      "x": 8,
+      "x": 25,
+      "y": 5,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 33,
+      "y": 35,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 20,
       "y": 5,
       "buildingTypeId": 1
     },
     {
-      "x": 8,
+      "x": 20,
       "y": 1,
       "buildingTypeId": 1
     },
     {
-      "x": 11,
-      "y": 7,
+      "x": 27,
+      "y": 5,
       "buildingTypeId": 3
     },
     {
-      "x": 13,
-      "y": 7,
-      "buildingTypeId": 3
-    },
-    {
-      "x": 8,
+      "x": 20,
       "y": 13,
       "buildingTypeId": 1
     },
     {
-      "x": 8,
+      "x": 20,
       "y": 9,
       "buildingTypeId": 1
     },
     {
-      "x": 13,
+      "x": 16,
+      "y": 1,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 16,
+      "y": 9,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 16,
+      "y": 13,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 33,
+      "y": 25,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 21,
+      "y": 11,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 21,
       "y": 13,
       "buildingTypeId": 3
     },
     {
-      "x": 36,
+      "x": 21,
+      "y": 9,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 21,
+      "y": 7,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 20,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 16,
+      "y": 17,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 20,
       "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 16,
+      "y": 21,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 20,
+      "y": 25,
+      "buildingTypeId": 1
+    },
+    {
+      "x": 19,
+      "y": 5,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 21,
+      "y": 5,
+      "buildingTypeId": 3
+    },
+    {
+      "x": 25,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 37,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 33,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 17,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 21,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 48,
+      "y": 25,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 48,
+      "y": 21,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 29,
+      "y": 1,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 35,
+      "y": 7,
       "buildingTypeId": 4
+    },
+    {
+      "x": 28,
+      "y": 7,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 35,
+      "y": 31,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 35,
+      "y": 19,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 35,
+      "y": 13,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 35,
+      "y": 25,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 40,
+      "y": 7,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 40,
+      "y": 23,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 40,
+      "y": 27,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 40,
+      "y": 19,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 40,
+      "y": 15,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 40,
+      "y": 11,
+      "buildingTypeId": 6
+    },
+    {
+      "x": 41,
+      "y": 31,
+      "buildingTypeId": 7
+    },
+    {
+      "x": 48,
+      "y": 33,
+      "buildingTypeId": 8
+    },
+    {
+      "x": 48,
+      "y": 29,
+      "buildingTypeId": 9
+    },
+    {
+      "x": 26,
+      "y": 13,
+      "buildingTypeId": 10
+    },
+    {
+      "x": 23,
+      "y": 7,
+      "buildingTypeId": 4
+    },
+    {
+      "x": 17,
+      "y": 7,
+      "buildingTypeId": 5
+    },
+    {
+      "x": 17,
+      "y": 11,
+      "buildingTypeId": 5
     }
   ]
 }

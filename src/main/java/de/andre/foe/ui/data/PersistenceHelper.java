@@ -176,12 +176,20 @@ public class PersistenceHelper {
     return pColor;
   }
 
+  /**
+   * Persistence model of all data (JSON representation)
+   * @author Andre
+   */
   @Data
   private static class PDatacenter {
     private List<PBuildingType> buildingTypes = new ArrayList<>();
     private List<PBuilding> buildings = new ArrayList<>();
   }
 
+  /**
+   * Persistence model of a building type (JSON representation)
+   * @author Andre
+   */
   @Data
   private static class PBuildingType {
     int id;
@@ -199,6 +207,10 @@ public class PersistenceHelper {
     PColor gridColor;
   }
 
+  /**
+   * Persistence model of a building (JSON representation)
+   * @author Andre
+   */
   @Data
   private static class PBuilding {
     int x;
@@ -206,6 +218,10 @@ public class PersistenceHelper {
     int buildingTypeId;
   }
 
+  /**
+   * Persistence model of an color (JSON representation)
+   * @author Andre
+   */
   @Data
   private static class PColor {
     int r, g, b, a;
