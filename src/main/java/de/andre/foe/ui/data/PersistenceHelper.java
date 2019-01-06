@@ -31,6 +31,7 @@ public class PersistenceHelper {
     try {
       fw = new FileWriter(file);
       fw.write(json);
+      log.info("Write gamefield to file " + file.getAbsolutePath() + ".");
     } catch (IOException e) {
       log.error("File creation failed.", e);
     } finally {
