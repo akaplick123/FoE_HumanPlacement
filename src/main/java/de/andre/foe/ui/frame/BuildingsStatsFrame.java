@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import de.andre.foe.ui.component.IntFormatter;
 import de.andre.foe.ui.component.SpringUtilities;
 import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.BuildingType;
@@ -111,15 +112,6 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
   }
 
   private static String intToText(int value) {
-    if (value % 100_000 == 0 && value >= 1_000_000) {
-      // e.g. 1500000 -> 1.5M
-      return Integer.toString(value / 1_000_000) + "M";
-    }
-    if (value % 100 == 0 && value >= 1_000) {
-      // e.g. 1500 -> 1.5K
-      return Integer.toString(value / 1_000) + "K";
-    }
-
-    return Integer.toString(value);
+    return IntFormatter.intToText(value);
   }
 }
