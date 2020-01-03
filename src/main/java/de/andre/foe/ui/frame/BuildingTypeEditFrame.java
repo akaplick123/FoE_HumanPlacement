@@ -18,9 +18,9 @@ import de.andre.foe.ui.component.SpringUtilities;
 import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.BuildingType;
 import de.andre.foe.ui.data.Datacenter;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.apachecommons.CommonsLog;
 
-@Log4j
+@CommonsLog
 public class BuildingTypeEditFrame extends JInternalFrameBase {
 
   /**

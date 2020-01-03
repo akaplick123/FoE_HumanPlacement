@@ -12,9 +12,9 @@ import java.util.List;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import lombok.Data;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.apachecommons.CommonsLog;
 
-@Log4j
+@CommonsLog
 public class PersistenceHelper {
 
   public void storeToFile(File file, Datacenter datacenter) {
