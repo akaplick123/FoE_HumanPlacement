@@ -58,7 +58,7 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
         System.err.println("BuildingsPlacementFrame: Object not found.");
       } else {
         buildingComponent.removeBuilding(obj);
-        buildingMap.remove(obj);
+        buildingMap.remove(building);
       }
     });
 
