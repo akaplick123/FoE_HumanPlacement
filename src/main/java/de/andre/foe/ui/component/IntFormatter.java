@@ -1,6 +1,9 @@
 package de.andre.foe.ui.component;
 
+import java.text.DecimalFormat;
+
 public class IntFormatter {
+  private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("#,##0");
 
   public static String intToText(int value) {
     if (value % 100_000 == 0 && value >= 1_000_000) {
@@ -12,7 +15,7 @@ public class IntFormatter {
       return value / 1_000 + "K";
     }
 
-    return Integer.toString(value);
+    return DECIMAL_FORMAT.format(value);
   }
 
   public static int textToInt(String text) {
