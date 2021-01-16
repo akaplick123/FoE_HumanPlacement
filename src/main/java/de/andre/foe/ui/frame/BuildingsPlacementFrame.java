@@ -37,6 +37,8 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
     buildingComponent = new BuildingComponent();
     JScrollPane sc = new JScrollPane(buildingComponent);
     add(sc, BorderLayout.CENTER);
+    StatusBar localStatusBar = new StatusBar();
+    add(localStatusBar.getStatusBarComponent(), BorderLayout.SOUTH);
 
     datacenter.addBuildingAddedListener(b -> {
       BuildingComponent.Building obj =
@@ -81,7 +83,7 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
           System.err.println("BuildingsPlacementFrame: Object not found.");
         } else {
           int cntByType = countPlacedBuildings(b);
-          statusBar.postStatus("Selected: " + b.getType().getName() + " (1 of " + cntByType + ")");
+          localStatusBar.postStatus("Selected: " + b.getType().getName() + " (1 of " + cntByType + ")");
         }
       }
     });

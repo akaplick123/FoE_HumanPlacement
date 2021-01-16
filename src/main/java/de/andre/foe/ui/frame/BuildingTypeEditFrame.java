@@ -143,7 +143,7 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
     bOk.addActionListener(e -> {
       // apply all values to building type
       if (buildingType == null) {
-        buildingType = new BuildingType();
+        buildingType = BuildingType.builder().build();
       }
       buildingType.setName(tfName.getText().trim());
       buildingType.setWidth((Integer) tfWidth.getValue());

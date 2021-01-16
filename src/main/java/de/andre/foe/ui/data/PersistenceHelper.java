@@ -91,20 +91,21 @@ public class PersistenceHelper {
   }
 
   private BuildingType convertTotModel(PBuildingType pBuildingType) {
-    BuildingType buildingType = new BuildingType();
-    buildingType.setName(pBuildingType.name);
-    buildingType.setMoney(pBuildingType.money);
-    buildingType.setCulture(pBuildingType.culture);
-    buildingType.setResources(pBuildingType.resources);
-    buildingType.setPeople(pBuildingType.people);
-    buildingType.setWidth(pBuildingType.width);
-    buildingType.setHeight(pBuildingType.height);
-    buildingType.setLayer(pBuildingType.layer);
-    buildingType.setFillColor(convertToModel(pBuildingType.fillColor));
-    buildingType.setShowGrid(
-        pBuildingType.showGrid != null && pBuildingType.showGrid.booleanValue());
-    buildingType.setGridColor(convertToModel(pBuildingType.gridColor));
-    buildingType.setBorderColor(convertToModel(pBuildingType.borderColor));
+    BuildingType buildingType = BuildingType.builder()
+        .name(pBuildingType.name)
+        .money(pBuildingType.money)
+        .culture(pBuildingType.culture)
+        .resources(pBuildingType.resources)
+        .people(pBuildingType.people)
+        .width(pBuildingType.width)
+        .height(pBuildingType.height)
+        .layer(pBuildingType.layer)
+        .fillColor(convertToModel(pBuildingType.fillColor))
+        .showGrid(
+            pBuildingType.showGrid != null && pBuildingType.showGrid.booleanValue())
+        .gridColor(convertToModel(pBuildingType.gridColor))
+        .borderColor(convertToModel(pBuildingType.borderColor))
+        .build();
 
     return buildingType;
   }

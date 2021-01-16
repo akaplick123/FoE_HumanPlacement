@@ -12,22 +12,22 @@ import org.springframework.stereotype.Component;
 public class Datacenter {
 
   private final EventListenerList eventListeners = new EventListenerList();
-
-  private File file;
   private final List<BuildingType> buildingTypes = new ArrayList<>();
   private final List<Building> buildings = new ArrayList<>();
+  private File file;
 
   public Datacenter() {
     // add some basic BuildingTypes ...
     BuildingType b;
 
-    b = new BuildingType();
-    b.setName("Grid (4x4)");
-    b.setWidth(4);
-    b.setHeight(4);
-    b.setFillColor(Color.white);
-    b.setGridColor(Color.lightGray);
-    b.setShowGrid(true);
+    b = BuildingType.builder()
+        .name("Grid (4x4)")
+        .width(4)
+        .height(4)
+        .fillColor(Color.white)
+        .gridColor(Color.lightGray)
+        .showGrid(true)
+        .build();
     buildingTypes.add(b);
   }
 
@@ -59,13 +59,13 @@ public class Datacenter {
     return buildings;
   }
 
+  public File getFile() {
+    return file;
+  }
+
   public void setFile(File file) {
     this.file = file;
     fireFilenameChangedEvent(this.file);
-  }
-
-  public File getFile() {
-    return file;
   }
 
   protected void fireBuildingTypeAddedEvent(BuildingType buildingType) {

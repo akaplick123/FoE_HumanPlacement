@@ -63,11 +63,13 @@ public class BuildingTypesFrame extends JInternalFrameBase {
     pBuildingtypes.add(bAdd);
     JButton bEdit = new JButton("edit");
     pBuildingtypes.add(bEdit);
+    JButton bClone = new JButton("clone");
+    pBuildingtypes.add(bClone);
     numberOfBuildingTypes++;
 
     // Lay out the panel.
     SpringUtilities.makeCompactGrid(pBuildingtypes, // parent
-        numberOfBuildingTypes, 2, // rows, columns
+        numberOfBuildingTypes, 3, // rows, columns
         3, 3, // initX, initY
         3, 3); // xPad, yPad
 
@@ -83,6 +85,14 @@ public class BuildingTypesFrame extends JInternalFrameBase {
         return new BuildingTypeEditFrame(datacenter, BuildingTypeEditFrame.EditType.EDIT,
             buildingType);
       }).actionPerformed(null);
+    });
+
+    bClone.addActionListener(e -> {
+      // create a new building type
+      BuildingType newBuildingType = buildingType.doClone();
+      newBuildingType.setName("Cloned " + buildingType.getName());
+      datacenter.add(newBuildingType);
+      BuildingTypesFrame.this.updateUI();
     });
   }
 
