@@ -1,5 +1,7 @@
 package de.andre.foe.ui.data;
 
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,8 +11,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParseException;
 import lombok.Data;
 import lombok.extern.apachecommons.CommonsLog;
 
@@ -102,7 +102,7 @@ public class PersistenceHelper {
     buildingType.setLayer(pBuildingType.layer);
     buildingType.setFillColor(convertToModel(pBuildingType.fillColor));
     buildingType.setShowGrid(
-        pBuildingType.showGrid == null ? false : pBuildingType.showGrid.booleanValue());
+        pBuildingType.showGrid != null && pBuildingType.showGrid.booleanValue());
     buildingType.setGridColor(convertToModel(pBuildingType.gridColor));
     buildingType.setBorderColor(convertToModel(pBuildingType.borderColor));
 
@@ -179,20 +179,24 @@ public class PersistenceHelper {
 
   /**
    * Persistence model of all data (JSON representation)
+   *
    * @author Andre
    */
   @Data
   private static class PDatacenter {
+
     private List<PBuildingType> buildingTypes = new ArrayList<>();
     private List<PBuilding> buildings = new ArrayList<>();
   }
 
   /**
    * Persistence model of a building type (JSON representation)
+   *
    * @author Andre
    */
   @Data
   private static class PBuildingType {
+
     int id;
     String name;
     int money = 0;
@@ -210,10 +214,12 @@ public class PersistenceHelper {
 
   /**
    * Persistence model of a building (JSON representation)
+   *
    * @author Andre
    */
   @Data
   private static class PBuilding {
+
     int x;
     int y;
     int buildingTypeId;
@@ -221,10 +227,12 @@ public class PersistenceHelper {
 
   /**
    * Persistence model of an color (JSON representation)
+   *
    * @author Andre
    */
   @Data
   private static class PColor {
+
     int r, g, b, a;
   }
 }

@@ -1,11 +1,11 @@
 package de.andre.foe.ui;
 
+import de.andre.foe.ui.frame.MainFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import de.andre.foe.ui.frame.MainFrame;
 
 @SpringBootApplication
 public class SpringBootSwingApplication implements CommandLineRunner {

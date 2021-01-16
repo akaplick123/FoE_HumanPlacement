@@ -1,5 +1,9 @@
 package de.andre.foe.ui.frame;
 
+import de.andre.foe.ui.component.BuildingComponent;
+import de.andre.foe.ui.component.StatusBar;
+import de.andre.foe.ui.data.Building;
+import de.andre.foe.ui.data.Datacenter;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -9,20 +13,18 @@ import java.util.Map.Entry;
 import javax.swing.AbstractAction;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
-import de.andre.foe.ui.component.BuildingComponent;
-import de.andre.foe.ui.component.StatusBar;
-import de.andre.foe.ui.data.Building;
-import de.andre.foe.ui.data.Datacenter;
 
 public class BuildingsPlacementFrame extends JInternalFrameBase {
 
   /**
-   * 
+   *
    */
   private static final long serialVersionUID = 1L;
 
-  private BuildingComponent buildingComponent;
-  /** map to associate the model of buildings with there representation on the screen */
+  private final BuildingComponent buildingComponent;
+  /**
+   * map to associate the model of buildings with there representation on the screen
+   */
   private final Map<Building, BuildingComponent.Building> buildingMap = new HashMap<>();
 
   public BuildingsPlacementFrame(Datacenter datacenter, StatusBar statusBar) {
@@ -71,7 +73,7 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
         b.setY(newPl.y);
       }
     });
-    
+
     buildingComponent.addObjectSelectedListener(obj -> {
       if (obj.isSelected()) {
         Building b = findKeyByValue(buildingMap, obj);
@@ -108,8 +110,8 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
 
   /**
    * searches thru the given map and try to find an entry where the value equals given value.
-   * 
-   * @param map the map to search thru
+   *
+   * @param map   the map to search thru
    * @param value the searched value
    * @return the key of the found entry or <code>null</code> if no entry has the given value
    */

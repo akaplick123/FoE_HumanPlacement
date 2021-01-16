@@ -1,10 +1,5 @@
 package de.andre.foe.ui.frame;
 
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 import de.andre.foe.ui.component.IntFormatter;
 import de.andre.foe.ui.component.SpringUtilities;
 import de.andre.foe.ui.data.Building;
@@ -12,14 +7,19 @@ import de.andre.foe.ui.data.BuildingType;
 import de.andre.foe.ui.data.Datacenter;
 import de.andre.foe.ui.data.Datacenter.BuildingAddedListener;
 import de.andre.foe.ui.data.Datacenter.BuildingRemovedListener;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 
 public class BuildingsStatsFrame extends JInternalFrameBase {
 
   /**
-   * 
+   *
    */
   private static final long serialVersionUID = 1L;
-  private Datacenter datacenter;
+  private final Datacenter datacenter;
 
   private JTextField tfPeople;
   private JTextField tfMoney;
@@ -101,7 +101,7 @@ public class BuildingsStatsFrame extends JInternalFrameBase {
     tfPeople.setText(intToText(sumPeople));
     tfCulture.setText(intToText(sumCulture));
     tfMoney.setText(intToText(sumMoney));
-    tfResources.setText(intToText(sumResources));    
+    tfResources.setText(intToText(sumResources));
   }
 
   private JTextField createNumberTextfield() {

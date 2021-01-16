@@ -1,28 +1,28 @@
 package de.andre.foe.ui.frame;
 
-import java.awt.BorderLayout;
-import javax.swing.JButton;
-import javax.swing.JDesktopPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SpringLayout;
 import de.andre.foe.ui.action.CreateInternalFrameAction;
 import de.andre.foe.ui.component.SpringUtilities;
 import de.andre.foe.ui.data.Building;
 import de.andre.foe.ui.data.BuildingType;
 import de.andre.foe.ui.data.Datacenter;
 import de.andre.foe.ui.data.Datacenter.BuildingtypeAddedListener;
+import java.awt.BorderLayout;
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SpringLayout;
 
 public class BuildingTypesFrame extends JInternalFrameBase {
 
   /**
-   * 
+   *
    */
   private static final long serialVersionUID = 1L;
 
   private final JDesktopPane desktop;
   private final Datacenter datacenter;
-  private JPanel pBuildingtypes;
+  private final JPanel pBuildingtypes;
   private int numberOfBuildingTypes = 0;
 
 

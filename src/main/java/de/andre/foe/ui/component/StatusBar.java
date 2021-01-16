@@ -6,7 +6,8 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 public class StatusBar {
-  private JLabel statusBar = new JLabel("started", JLabel.LEADING);
+
+  private final JLabel statusBar = new JLabel("started", JLabel.LEADING);
 
   public JComponent getStatusBarComponent() {
     return statusBar;

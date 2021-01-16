@@ -6,12 +6,14 @@ import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;
 
 public class CreateInternalFrameAction implements ActionListener {
+
   private final JDesktopPane desktop;
   private final FrameBuilder frameBuilder;
 
   @FunctionalInterface
-  public static interface FrameBuilder {
-    public JInternalFrame buildFrame();
+  public interface FrameBuilder {
+
+    JInternalFrame buildFrame();
   }
 
   public CreateInternalFrameAction(JDesktopPane desktop, FrameBuilder frameBuilder) {

@@ -7,11 +7,13 @@ import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
 public abstract class JInternalFrameBase extends JInternalFrame {
+
   private static final long serialVersionUID = 1L;
 
   @FunctionalInterface
-  public static interface InternalFrameClosedListener {
-    public void internalFrameClosed(InternalFrameEvent e);
+  public interface InternalFrameClosedListener {
+
+    void internalFrameClosed(InternalFrameEvent e);
   }
 
   private static final int xOffset = 30, yOffset = 30;
@@ -50,7 +52,7 @@ public abstract class JInternalFrameBase extends JInternalFrame {
 
   /**
    * adds another internalFrameClosed listener
-   * 
+   *
    * @param listener the action to be executed on internalFrameClosed events
    */
   public void addInternalFrameClosedListener(InternalFrameClosedListener listener) {

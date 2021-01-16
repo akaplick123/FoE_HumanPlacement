@@ -19,22 +19,28 @@ import lombok.Setter;
 public class BuildingComponent extends JComponent {
 
   /**
-   * 
+   *
    */
   private static final long serialVersionUID = 1L;
 
-  public static interface ObjectSelectedListener extends EventListener {
-    public void objectSelectedEvent(Building object);
+  public interface ObjectSelectedListener extends EventListener {
+
+    void objectSelectedEvent(Building object);
   }
 
-  public static interface ObjectMovedListener extends EventListener {
-    public void objectMovedEvent(Building object, Point oldLocation, Point newLocation);
+  public interface ObjectMovedListener extends EventListener {
+
+    void objectMovedEvent(Building object, Point oldLocation, Point newLocation);
   }
 
-  /** basic grid configuration */
-  private Grid grid = new Grid();
+  /**
+   * basic grid configuration
+   */
+  private final Grid grid = new Grid();
 
-  /** all buildings. key is the layer. higher numbered layers gets painted later */
+  /**
+   * all buildings. key is the layer. higher numbered layers gets painted later
+   */
   private final TreeMap<Integer, List<Building>> objects = new TreeMap<>();
 
   // drag and drop support
@@ -42,8 +48,10 @@ public class BuildingComponent extends JComponent {
   private Point startDragLocation = null;
   private Point redSquareStartingLocation = null;
 
-  /** all event listeners */
-  private EventListenerList eventListeners = new EventListenerList();
+  /**
+   * all event listeners
+   */
+  private final EventListenerList eventListeners = new EventListenerList();
 
   public BuildingComponent() {
     setPreferredSize(new Dimension(1500, 1500));
@@ -111,12 +119,13 @@ public class BuildingComponent extends JComponent {
 
   /**
    * adds a new logical component to the grid
-   * 
-   * @param x logical x coordinate
-   * @param y logical y coordinate
-   * @param width number of horizontal grid cells
-   * @param height number of vertical grid cells
-   * @param layer an arbitrary number. Buildings at layers with higher numbers get painted later.
+   *
+   * @param x         logical x coordinate
+   * @param y         logical y coordinate
+   * @param width     number of horizontal grid cells
+   * @param height    number of vertical grid cells
+   * @param layer     an arbitrary number. Buildings at layers with higher numbers get painted
+   *                  later.
    * @param fillColor color for the background
    */
   public Building placeBuilding(int x, int y, int width, int height, int layer, Color fillColor) {
@@ -174,7 +183,7 @@ public class BuildingComponent extends JComponent {
 
   /**
    * searches for an building at the given location
-   * 
+   *
    * @param p physical location
    * @return an building or <code>null</code> if no building at given coordinates
    */
@@ -197,8 +206,8 @@ public class BuildingComponent extends JComponent {
 
   /**
    * @param building the object to move
-   * @param x new physical x position
-   * @param y new physical y position
+   * @param x        new physical x position
+   * @param y        new physical y position
    */
   private void moveObjectTo(Building building, int x, int y) {
     // Current square state, stored as final variables
@@ -252,10 +261,11 @@ public class BuildingComponent extends JComponent {
   }
 
   private static class Grid {
-    private int xStart = 10;
-    private int yStart = 10;
-    private int boxWidth = 20;
-    private int boxHeight = 20;
+
+    private final int xStart = 10;
+    private final int yStart = 10;
+    private final int boxWidth = 20;
+    private final int boxHeight = 20;
 
     /**
      * @return width of a single cell or box
@@ -273,7 +283,7 @@ public class BuildingComponent extends JComponent {
 
     /**
      * adopts x and y of red square so that it matches the grid constraints
-     * 
+     *
      * @param object
      */
     public void snap(Building object) {
@@ -298,8 +308,8 @@ public class BuildingComponent extends JComponent {
 
     /**
      * @param building the building to be placed
-     * @param x logical x coordinate
-     * @param y logical y coordinate
+     * @param x        logical x coordinate
+     * @param y        logical y coordinate
      */
     public void setToLogicalPoint(Building building, int x, int y) {
       int newX = this.xStart + x * getCellWidth();
@@ -311,12 +321,13 @@ public class BuildingComponent extends JComponent {
 
   /**
    * Graphical representation of a building
-   * 
+   *
    * @author Andre
    */
   @Getter
   @Setter
   public static class Building {
+
     private final Grid gridConfig;
 
     private int xPos = 50;
@@ -358,7 +369,7 @@ public class BuildingComponent extends JComponent {
 
     /**
      * paints that object
-     * 
+     *
      * @param g
      */
     public void paintSquare(Graphics2D g) {

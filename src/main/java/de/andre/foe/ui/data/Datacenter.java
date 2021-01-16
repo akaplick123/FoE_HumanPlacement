@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Datacenter {
 
-  private volatile EventListenerList eventListeners = new EventListenerList();
+  private final EventListenerList eventListeners = new EventListenerList();
 
   private File file;
   private final List<BuildingType> buildingTypes = new ArrayList<>();
   private final List<Building> buildings = new ArrayList<>();
-  
+
   public Datacenter() {
     // add some basic BuildingTypes ...
     BuildingType b;
@@ -143,24 +143,29 @@ public class Datacenter {
   }
 
 
-  public static interface BuildingtypeAddedListener extends EventListener {
-    public void buildingtypeAdded(BuildingType buildingType);
+  public interface BuildingtypeAddedListener extends EventListener {
+
+    void buildingtypeAdded(BuildingType buildingType);
   }
 
-  public static interface BuildingtypeRemovedListener extends EventListener {
-    public void buildingtypeRemoved(BuildingType buildingType);
+  public interface BuildingtypeRemovedListener extends EventListener {
+
+    void buildingtypeRemoved(BuildingType buildingType);
   }
 
-  public static interface BuildingAddedListener extends EventListener {
-    public void buildingAdded(Building building);
+  public interface BuildingAddedListener extends EventListener {
+
+    void buildingAdded(Building building);
   }
 
-  public static interface BuildingRemovedListener extends EventListener {
-    public void buildingRemoved(Building building);
+  public interface BuildingRemovedListener extends EventListener {
+
+    void buildingRemoved(Building building);
   }
 
-  public static interface FilenameChangedListener extends EventListener {
-    public void filenameChanged(File newFilename);
+  public interface FilenameChangedListener extends EventListener {
+
+    void filenameChanged(File newFilename);
   }
 
 }

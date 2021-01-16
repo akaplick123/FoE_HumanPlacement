@@ -1,5 +1,10 @@
 package de.andre.foe.ui.frame;
 
+import de.andre.foe.ui.component.IntFormatter;
+import de.andre.foe.ui.component.SpringUtilities;
+import de.andre.foe.ui.data.Building;
+import de.andre.foe.ui.data.BuildingType;
+import de.andre.foe.ui.data.Datacenter;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -14,23 +19,18 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SpringLayout;
-import de.andre.foe.ui.component.IntFormatter;
-import de.andre.foe.ui.component.SpringUtilities;
-import de.andre.foe.ui.data.Building;
-import de.andre.foe.ui.data.BuildingType;
-import de.andre.foe.ui.data.Datacenter;
 import lombok.extern.apachecommons.CommonsLog;
 
 @CommonsLog
 public class BuildingTypeEditFrame extends JInternalFrameBase {
 
   /**
-   * 
+   *
    */
   private static final long serialVersionUID = 1L;
-  private Datacenter datacenter;
+  private final Datacenter datacenter;
   private BuildingType buildingType;
-  private EditType editMode;
+  private final EditType editMode;
 
   public BuildingTypeEditFrame(Datacenter datacenter, EditType editMode, BuildingType entity) {
     super();
@@ -109,7 +109,7 @@ public class BuildingTypeEditFrame extends JInternalFrameBase {
 
     JPanel pButtons = new JPanel(new FlowLayout(FlowLayout.CENTER));
     JButton bOk = new JButton("apply");
-    JButton bDelete = new JButton("delete");;
+    JButton bDelete = new JButton("delete");
     switch (editMode) {
       case EDIT:
         setTitle("Edit building type");

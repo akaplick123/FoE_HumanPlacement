@@ -1,5 +1,12 @@
 package de.andre.foe.ui.frame;
 
+import de.andre.foe.ui.action.CreateInternalFrameAction;
+import de.andre.foe.ui.action.LoadFileAction;
+import de.andre.foe.ui.action.QuitAction;
+import de.andre.foe.ui.action.SaveAsFileAction;
+import de.andre.foe.ui.action.SaveFileAction;
+import de.andre.foe.ui.component.StatusBar;
+import de.andre.foe.ui.data.Datacenter;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -17,16 +24,10 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import de.andre.foe.ui.action.CreateInternalFrameAction;
-import de.andre.foe.ui.action.LoadFileAction;
-import de.andre.foe.ui.action.QuitAction;
-import de.andre.foe.ui.action.SaveAsFileAction;
-import de.andre.foe.ui.action.SaveFileAction;
-import de.andre.foe.ui.component.StatusBar;
-import de.andre.foe.ui.data.Datacenter;
 
 @Component
 public class MainFrame extends JFrame {
+
   private static final long serialVersionUID = 1L;
   private JDesktopPane desktop;
   private StatusBar statusBar;
