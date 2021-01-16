@@ -23,15 +23,17 @@ public class SaveAsFileAction implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    File currentDirectory = new File("gamefield.dat");
+    File currentDirectory = new File("gamefield.dat").getAbsoluteFile();
     if (datacenter.getFile() != null) {
       currentDirectory = datacenter.getFile();
+    } else if (currentDirectory.getParentFile() != null) {
+      currentDirectory = currentDirectory.getParentFile();
     }
     JFileChooser chooser = new JFileChooser(currentDirectory);
 
     int rc = chooser.showSaveDialog(desktop);
     if (rc == JFileChooser.APPROVE_OPTION) {
-      File file = chooser.getSelectedFile();
+      File file = chooser.getSelectedFile().getAbsoluteFile();
       new PersistenceHelper().storeToFile(file, datacenter);
       if (datacenter.getFile() == null) {
         datacenter.setFile(file);

@@ -80,7 +80,8 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
         if (b == null) {
           System.err.println("BuildingsPlacementFrame: Object not found.");
         } else {
-          statusBar.postStatus("Selected: " + b.getType().getName());
+          int cntByType = countPlacedBuildings(b);
+          statusBar.postStatus("Selected: " + b.getType().getName() + " (1 of " + cntByType + ")");
         }
       }
     });
@@ -106,6 +107,16 @@ public class BuildingsPlacementFrame extends JInternalFrameBase {
         datacenter.remove(b);
       }
     });
+  }
+
+  private int countPlacedBuildings(Building building) {
+    int count = 0;
+    for (Building mapedBuilding : buildingMap.keySet()) {
+      if (mapedBuilding.getType().equals(building.getType())) {
+        count++;
+      }
+    }
+    return count;
   }
 
   /**

@@ -23,15 +23,17 @@ public class LoadFileAction implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    File currentDirectory = new File("gamefield.dat");
+    File currentDirectory = new File("gamefield.dat").getAbsoluteFile();
     if (datacenter.getFile() != null) {
       currentDirectory = datacenter.getFile();
+    } else if (currentDirectory.getParentFile() != null) {
+      currentDirectory = currentDirectory.getParentFile();
     }
     JFileChooser chooser = new JFileChooser(currentDirectory);
 
     int rc = chooser.showOpenDialog(desktop);
     if (rc == JFileChooser.APPROVE_OPTION) {
-      File file = chooser.getSelectedFile();
+      File file = chooser.getSelectedFile().getAbsoluteFile();
       new PersistenceHelper().loadFromFile(file, datacenter);
       datacenter.setFile(file);
       statusBar.postStatus("gamefield loaded from " + file.getAbsolutePath());
